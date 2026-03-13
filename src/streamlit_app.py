@@ -18,16 +18,19 @@ st.markdown("""
 Predict the toxicity of any molecule using the **Tox21 dataset** and Machine Learning.
 Enter a SMILES string below to predict toxicity across **12 biological targets**.
 
-> *Built by Adejoke Adewumi — bridging Environmental Science and AI Drug Discovery*
+> *Built by Adejoke Adewumi — Environmental Science, Computational Toxicology, and AI-driven Chemical Safety*
 """)
 
 @st.cache_resource
 def load_model():
-    try:
-        data = joblib.load("models/rf_model.pkl")
-        return data["models"], data["target_names"]
-    except FileNotFoundError:
-        return None, None
+    import urllib.request
+    import tempfile
+    url = "https://raw.githubusercontent.com/adejoke-adewumi/qsar-toxicity-predictor/main/data/tox21.csv"
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as f:
+        urllib.request.urlretrieve(url, f.name)
+        from src.features import smiles_to_fingerprint
+        df = pd.read_csv(f.name)
+    return None, None
 
 models, target_names = load_model()
 
