@@ -5,5 +5,5 @@ joblib
 matplotlib
 seaborn
 rdkit
-streamlit
-jupyter
+streamlit==1.32.0
+altair==4.2.2
