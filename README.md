@@ -14,7 +14,7 @@ environmental contaminant research and computational drug safety screening.
 
 ---
 
-## 🔬 Motivation
+##  Motivation
 
 My Master's thesis investigates how environmental pollutants (3-BHA)
 penetrate and disrupt lipid bilayer membranes using Molecular Dynamics
@@ -28,7 +28,7 @@ screening (ADMET). This project sits at that intersection.
 
 ---
 
-## ⚙️ Pipeline
+##  Pipeline
 ```
 SMILES String
       ↓
@@ -45,7 +45,7 @@ Interactive Streamlit Web App
 
 ---
 
-## 🧪 What This Does
+##  What This Does
 
 - Converts molecules (SMILES strings) into Morgan fingerprints using **RDKit**
 - Trains and benchmarks **Random Forest, SVM, and XGBoost** classifiers
@@ -55,35 +55,48 @@ Interactive Streamlit Web App
 
 ---
 
-## 📊 Model Benchmark
+##  Model Performance
 
-Random Forest, Support Vector Machine, and Gradient Boosting models were
-trained and compared for toxicity prediction using Morgan fingerprints.
-Model performance was evaluated using ROC-AUC across 12 Tox21 targets.
+Mean ROC-AUC across 12 toxicity targets: **0.793**
 
-| Model | Mean ROC-AUC |
-|-------|-------------|
-| Random Forest | TBD |
-| SVM (RBF kernel) | TBD |
-| XGBoost | TBD |
-
-*Run `python src/model_rf.py` to generate results*
+| Target | Biological Meaning | ROC-AUC |
+|--------|--------------------|---------|
+| NR-AR | Androgen receptor | 0.819 |
+| NR-AR-LBD | Androgen receptor ligand binding | 0.841 |
+| NR-AhR | Aryl hydrocarbon receptor | 0.877 |
+| NR-Aromatase | Aromatase inhibition | 0.811 |
+| NR-ER | Estrogen receptor | 0.733 |
+| NR-ER-LBD | Estrogen receptor ligand binding | 0.766 |
+| NR-PPAR-gamma | Peroxisome proliferator receptor | 0.698 |
+| SR-ARE | Oxidative stress response | 0.752 |
+| SR-ATAD5 | Genotoxicity | 0.772 |
+| SR-HSE | Heat shock response | 0.790 |
+| SR-MMP | Mitochondrial membrane disruption | 0.858 |
+| SR-p53 | DNA damage response | 0.821 |
+| **Mean** | | **0.793** |
+```
 
 ---
 
-## 🧪 Example Prediction
+##  Example Prediction
 
-Input SMILES: `CC(=O)Oc1ccccc1C(=O)O` (Aspirin)
+Input SMILES: `COc1ccc(O)cc1C(C)(C)C`  
+Compound: **3-BHA** (Butylated Hydroxyanisole — my Masters thesis compound)
 
 | Target | Toxicity Probability |
 |--------|---------------------|
-| NR-AR | TBD |
-| NR-AhR | TBD |
-| SR-MMP | TBD |
+| NR-AhR | 0.54 |
+| NR-ER | 0.63 |
+| NR-ER-LBD | 0.61 |
+| SR-ARE | 0.55 |
+| SR-MMP | 0.74 |
+| SR-p53 | 0.52 |
 
+> 🔴 High toxicity predicted for SR-MMP (mitochondrial membrane disruption) 
+```
 ---
 
-## 🗂️ Toxicity Targets (Tox21)
+##  Toxicity Targets (Tox21)
 
 | Target | Biological Meaning |
 |--------|--------------------|
@@ -97,7 +110,7 @@ Input SMILES: `CC(=O)Oc1ccccc1C(=O)O` (Aspirin)
 
 ---
 
-## ⚙️ Installation
+##  Installation
 ```bash
 git clone https://github.com/adejoke-adewumi/qsar-toxicity-predictor.git
 cd qsar-toxicity-predictor
@@ -111,7 +124,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Usage
+##  Usage
 ```bash
 # Step 1: Download Tox21 dataset
 python -c "
@@ -135,7 +148,7 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 ```
 qsar-project/
 ├── src/
@@ -152,7 +165,7 @@ qsar-project/
 
 ---
 
-## 🔭 Future Work
+##  Future Work
 
 - Extend to **PFAS and endocrine disruptor** datasets
 - Add **Graph Neural Network (GNN)** using PyTorch Geometric
@@ -161,7 +174,7 @@ qsar-project/
 
 ---
 
-## 📚 References
+##  References
 
 - Tox21 Dataset: https://tox21.gov
 - RDKit Documentation: https://www.rdkit.org
@@ -169,7 +182,7 @@ qsar-project/
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
 
