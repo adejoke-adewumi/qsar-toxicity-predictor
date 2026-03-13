@@ -1,9 +1,9 @@
 streamlit
-altair
-numpy
 pandas
+numpy
 scikit-learn
-joblib
 matplotlib
-rdkit-pypi
-Pillow==10.3.0
+rdkit
+pillow
+altair
+joblib
