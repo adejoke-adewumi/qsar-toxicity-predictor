@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+qsar_env/
+venv/
+data/
+models/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
