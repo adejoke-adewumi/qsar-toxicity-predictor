@@ -18,7 +18,7 @@ st.markdown("""
 Predict the toxicity of any molecule using the **Tox21 dataset** and Machine Learning.
 Enter a SMILES string below to predict toxicity across **12 biological targets**.
 
-> *Built by Adejoke Adewumi — Environmental Science, Computational Toxicology, and AI-driven Chemical Safety*
+> *Built by Agbailu Adejoke Adewumi — Environmental Science, Computational Toxicology, and AI-driven Chemical Safety*
 """)
 
 @st.cache_resource
