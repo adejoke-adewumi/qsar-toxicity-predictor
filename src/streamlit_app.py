@@ -8,6 +8,15 @@ import matplotlib.pyplot as plt
 import sys
 import os
 
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+html, body, [class*="css"]  {
+    font-family: 'Inter', sans-serif;
+}
+</style>
+""", unsafe_allow_html=True)
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.features import smiles_to_fingerprint, smiles_to_descriptors
 
