@@ -23,14 +23,11 @@ Enter a SMILES string below to predict toxicity across **12 biological targets**
 
 @st.cache_resource
 def load_model():
-    import urllib.request
-    import tempfile
-    url = "https://raw.githubusercontent.com/adejoke-adewumi/qsar-toxicity-predictor/main/data/tox21.csv"
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as f:
-        urllib.request.urlretrieve(url, f.name)
-        from src.features import smiles_to_fingerprint
-        df = pd.read_csv(f.name)
-    return None, None
+    try:
+        data = joblib.load("models/rf_model.pkl")
+        return data["models"], data["target_names"]
+    except FileNotFoundError:
+        return None, None
 
 models, target_names = load_model()
 
