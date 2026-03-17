@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
-Applying QSAR machine learning to predict molecular toxicity — bridging
+Applying QSAR machine learning to predict molecular toxicity bridging
 environmental contaminant research and computational drug safety screening.
 
 **Author:** Agbailu Adejoke Adewumi  
@@ -18,7 +18,7 @@ environmental contaminant research and computational drug safety screening.
 
 My Master's thesis investigates how environmental pollutants (3-BHA)
 penetrate and disrupt lipid bilayer membranes using Molecular Dynamics
-simulations. This project extends that work computationally — applying
+simulations. This project extends that work computationally applying
 machine learning to rapidly screen molecular toxicity before conducting
 more computationally intensive molecular simulations.
 
